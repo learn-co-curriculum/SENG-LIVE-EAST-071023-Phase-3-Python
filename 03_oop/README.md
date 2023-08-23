@@ -5,7 +5,7 @@
 - Define Object Oriented Programming
 - Explain the benefits of Object Oriented Programming
 - Explain the principles of Object-Oriented Design
-- Demonstrate Classes 
+s- Demonstrate Classes 
 - Demonstrate Instances 
 - Demonstrate `__init__`
 - Demonstrate instance method

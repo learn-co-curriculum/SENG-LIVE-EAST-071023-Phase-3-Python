@@ -7,7 +7,7 @@
 
 
 class Pet:
-    # pass
+    pass
 # 3. ✅ Demonstrate __init__ 
     # Add arguments to instances  
     # use dot notation to access their attributes 
