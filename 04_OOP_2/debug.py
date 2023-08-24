@@ -7,9 +7,27 @@ from lib.pet import *
 from lib.cat import *
 
 # Instances of the pet classes
-rose = Pet('rose', 11, 'domestic longhair', 'sweet', 'rose.jpg', True)
-cookie = Pet('cookie', 1, 'Dachshund', 'hyper', 'cookie.jpg')
-princess_grace = Cat('princess grace', 7, 'domestic longhair', 'affectionate', 'gracy.png')
+cookie = Pet('cookie', 1, 'hyper', 'cookie.jpg')
+princess = Pet( 'Princess', 2, 'docile', 'princess.jpg' )
+
+# ✅. Show how to do mass assignment when making a new instance
+Pet(
+    name = 'K',
+    image_url = 'k.jpg',
+    temperament = 'Calm',
+    age = 5
+)
+
+rose = Cat(
+    name = 'Rose',
+    image_url = 'rose.jpg',
+    indoor = True,
+    breed = 'Sphinx',
+    temperament = 'independent',
+    age = 6
+)
+# princess_grace = Cat('princess grace', 7, 'domestic longhair', 'affectionate', 'gracy.png')
+
 
 
 
