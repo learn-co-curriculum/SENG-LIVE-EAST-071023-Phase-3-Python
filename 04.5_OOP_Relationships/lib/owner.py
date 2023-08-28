@@ -3,8 +3,8 @@ class Owner ( ) :
     all = []
 
     def __init__ ( self, name, shoes, ssn ) :
-        self._name = name
-        self._shoes = shoes
+        self.name = name
+        self.shoes = shoes
         if type( ssn ) is int and len( str( ssn ) ) == 9 :
             self.__ssn = ssn
         else :
