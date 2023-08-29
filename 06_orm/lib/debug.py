@@ -15,7 +15,7 @@ from pet import Pet, CONN, CURSOR
 # frank.save()
 
 # Pet.create_table()
-# spot = Pet("spot", "dog", "chihuahua", "feisty", 1)
+spot = Pet("Spot", "Dog", "Chihuahua", "Feisty", 1)
 # spot.save()
 
 import ipdb; ipdb.set_trace()
