@@ -75,8 +75,6 @@ class Pet:
         # If No "pet" Found, return "None"
             raise Exception( 'No pet found with that name.' )
 
-
-    #
     @classmethod
     def find_by_id ( cls, id ) :
         if type( id ) is int and id > 0 :
@@ -86,7 +84,8 @@ class Pet:
                 return Pet.new_from_db( pet )
             else :
                 # If No "pet" Found, return "None"
-                raise Exception( 'No pet with that id exists.' )
+                # raise Exception( 'No pet with that id exists.' )
+                return None
         else :
             raise Exception( 'Id must be a number greater than 0.' )
 

@@ -22,6 +22,7 @@ def print_view_data_menu():
     print("| Options :            |")
     print("| 1. Print All Pets    |")
     print("| 2. Print pet by ID   |")
+    print("| 3. Print pet by name |")
     print("| e: Exit Menu         |")
     print("+----------------------+")
 
@@ -53,6 +54,16 @@ def print_pet_by_id ( id ):
     else:
         print("Could not find pet")
 
+def print_pet_by_name ( name ):
+    pets = Pet.find_by_name(name)
+    if pets is not []:
+        print_pet_row_header()
+        for pet in pets:
+            print_pet_row(pet)
+        print_pet_row_footer()
+    else:
+        print("Could not find pet")
+
 # Menus
 def view_data_menu():
     looping = True
@@ -68,7 +79,15 @@ def view_data_menu():
         elif command == "2":
             pet_id = input("Input id to search for:")
             pet_id = int(pet_id)
-            print_pet_by_id(pet_id)
+            try:
+                print_pet_by_id(pet_id)
+            except TypeError:
+                print(f"Could not find pet with id : {pet_id}")
+            
+        #Print Pet by Name
+        elif command == "3":
+            pet_name = input("Input name to search for:")
+            print_pet_by_name(pet_name)
         #Exit this sub menu
         elif command == "e":
             looping = False
@@ -119,7 +138,7 @@ def modify_data_menu():
 
 # Main Method Code
 if __name__ == "__main__":
-
+    
     print_welcome_message()
 
     looping = True
