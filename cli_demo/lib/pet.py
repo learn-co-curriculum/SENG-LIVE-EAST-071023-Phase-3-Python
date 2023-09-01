@@ -17,17 +17,33 @@ CURSOR = CONN.cursor()
 
 class Pet:
     
-    # ✅ 1. Add "__init__" with "name", "species", "breed", "temperament", and "id" (Default: None) Attributes
     def __init__ ( self, owner_id, name, breed, age, id = None ) :
         self.name = name
         self.breed = breed
         self.age = age
         self.owner_id = owner_id
         self.id = id
+    
+    @property
+    def id (self):
+        if self._id is None:
+            return -1
+        else:
+            return self._id
+    
+    @id.setter
+    def id (self, id):
+        self._id = id
+
 
     def __repr__ ( self ) :
         return f"{{ 'id': { self.id }, 'name': { self.name }, 'breed': { self.breed }, 'age': { self.age } }}"
 
+
+    def save ( self ) :
+        sql = 'INSERT INTO pets ( name, breed, age, owner_id ) values ( ?, ?, ?, ?)'
+        CURSOR.execute( sql, ( self.name, self.breed, self.age, self.owner_id) )
+        CONN.commit()
 
     @classmethod
     def new_from_db ( cls, record ) :
@@ -60,7 +76,7 @@ class Pet:
             raise Exception( 'No pet found with that name.' )
 
 
-    # ✅ 9. Add "find_by_id" Class Method to Retrieve "pet" Instance by "id" Attribute From DB
+    #
     @classmethod
     def find_by_id ( cls, id ) :
         if type( id ) is int and id > 0 :
