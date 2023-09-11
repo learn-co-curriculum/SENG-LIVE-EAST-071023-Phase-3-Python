@@ -2,7 +2,7 @@
 # Pet >- Owner
 
 #Import ForeignKey
-from sqlalchemy import (PrimaryKeyConstraint, Column, String, Integer, Float,  DateTime)
+from sqlalchemy import (Column, String, Integer, Float,  DateTime)
 
 # import relationship and backref from sqlalchemy.orm 
 from sqlalchemy.ext.declarative import declarative_base
@@ -11,9 +11,8 @@ Base = declarative_base()
 
 class Pet(Base):
     __tablename__ = 'pets'
-    __table_args__ = (PrimaryKeyConstraint('id'),)
 
-    id = Column(Integer())
+    id = Column(Integer(), primary_key = True)
     name = Column(String())
     species = Column(String())
     breed = Column(String())
@@ -25,11 +24,11 @@ class Pet(Base):
 
     
     def __repr__(self):
-        return f"Id: {self.id}, " \
+        return f"{{Id: {self.id}, " \
             + f"Name:{self.name}, " \
             + f"Species {self.species}, "\
             + f"Breed {self.breed}, "\
-            + f"Species {self.temperament}"
+            + f"Temperament {self.temperament}}}"
 
 #1.b✅ Add an Owners table 
 
