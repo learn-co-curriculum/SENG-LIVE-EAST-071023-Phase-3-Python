@@ -35,10 +35,6 @@ presentation:
 
 ---
 
-![lord-orm](./Lord_Orm.webp)
-
-xxx
-
 ![python-orm](./orm-python-db-overview.png)
 
 ---
