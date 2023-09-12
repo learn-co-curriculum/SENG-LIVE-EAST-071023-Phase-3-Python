@@ -1,14 +1,13 @@
 ---
-theme : "night"
-transition: "slide"
-highlightTheme: "monokai"
+theme: 'night'
+transition: 'slide'
+highlightTheme: 'monokai'
 slideNumber: false
-title: "P3L7 - SQLAlchemy & Alembic"
+title: 'P3L7 - SQLAlchemy & Alembic'
 verticalSeparator: 'xxx'
 presentation:
-    width: 1500
-    height: 1000
-
+  width: 1500
+  height: 1000
 ---
 
 <h2>SQLAlchemy & Alembic</h2>
@@ -18,31 +17,25 @@ presentation:
 
 <h3><strong> ✅ Objectives </strong></h3>
 
-* Understand what SQLAlchemy is and how it's beneficial as an ORM
-* Know how to create a database with SQLAlchemy
-* Create schema
-* Understand what Alembic is and how it works with SQLAlchemy
-* Configure an app to use Alembic
-* Create and apply migrations
-* Execute full CRUD using SQLAlchemy
+- Understand what SQLAlchemy is and how it's beneficial as an ORM
+- Know how to create a database with SQLAlchemy
+- Create schema
+- Understand what Alembic is and how it works with SQLAlchemy
+- Configure an app to use Alembic
+- Create and apply migrations
+- Execute full CRUD using SQLAlchemy
 
 ---
 
 ### What is SQLAlchemy?
 
-> "SQLAlchemy is the Python SQL  toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL."
-
+> "SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL."
 
 ---
-
-![lord-orm](./Lord_Orm.webp)
-
-xxx
 
 ![python-orm](./orm-python-db-overview.png)
 
 ---
-
 
 ### What is a **schema**?
 
@@ -91,10 +84,11 @@ class Pet(Base):
             + f"Name:{self.name}, "
             + f"Species {self.species}, "
             + f"Breed {self.breed}, "
-            + f"Species {self.temperament}"
+            + f"Temperament {self.temperament}"
         )
 
 ```
+
 #### Let's jump into the code! {.fragment}
 
 ---
@@ -107,8 +101,6 @@ We'll need an engine to apply our schema to our database.
 
 ---
 
-
-
 ---
 
 ### What is a **session**?
@@ -116,7 +108,6 @@ We'll need an engine to apply our schema to our database.
 A Python object that uses an engine to allow us to programmatically interact with a database.
 
 ---
-
 
 <section data-background-color="mistyrose">
   <h3>What is a <strong>transaction</strong>?</h3>
@@ -155,7 +146,3 @@ A database migration tool written by the author of SQLAlchemy
 ---
 
 ![migration-diagram](./intro-db-migrations.png)
-
-
-
-

@@ -23,7 +23,7 @@ class Pet(Base):
     owner_id = Column(Integer(), ForeignKey('owners.id'))
     # owner = relationship
     def __repr__(self):
-        return f"Id: {self.id}, " \
+        return f"{{Id: {self.id}, " \
             + f"Name:{self.name}, " \
             + f"Species {self.species}, "\
             + f"Breed {self.breed}, "\
