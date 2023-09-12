@@ -1,19 +1,21 @@
 """adding models
 
-Revision ID: 8a7c5591f32c
-Revises: 8b8cc2bdc73a
-Create Date: 2022-11-17 09:42:59.239161
+Revision ID: f05adc703e47
+Revises: 
+Create Date: 2023-09-12 10:47:16.168891
 
 """
+from typing import Sequence, Union
+
 from alembic import op
 import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8a7c5591f32c'
-down_revision = '8b8cc2bdc73a'
-branch_labels = None
-depends_on = None
+revision: str = 'f05adc703e47'
+down_revision: Union[str, None] = None
+branch_labels: Union[str, Sequence[str], None] = None
+depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
@@ -24,7 +26,8 @@ def upgrade() -> None:
     sa.Column('email', sa.String(), nullable=True),
     sa.Column('phone', sa.Integer(), nullable=True),
     sa.Column('address', sa.String(), nullable=True),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email')
     )
     op.create_table('pets',
     sa.Column('id', sa.Integer(), nullable=False),
